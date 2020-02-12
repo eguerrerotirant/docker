@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#(service xvfb start; export DISPLAY=:10; cd "$SCRIPT_DIR"; $*)
+(export DISPLAY=:10; cd "$SCRIPT_DIR"; $*)

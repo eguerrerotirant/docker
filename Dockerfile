@@ -95,14 +95,18 @@ COPY . /app
 WORKDIR /app
 
 # expose port
-EXPOSE 5000
+#EXPOSE 5000
 
 # run python
 #ENTRYPOINT [""]
+ENTRYPOINT ["./launch.init"]
 
 ENV AM_I_IN_A_DOCKER_CONTAINER Yes
 
 ENV MONGO_HOST "host.docker.internal"
 
+RUN chmod +x /app/launch.init
+
 # run app
-CMD (service xvfb start; export DISPLAY=:10; python get_dc_data.py)
+#CMD (service xvfb start; export DISPLAY=:10; python get_dc_data.py)
+
